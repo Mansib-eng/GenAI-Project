@@ -23,3 +23,17 @@ This repository documents my structured journey in Generative AI.
 ```bash
 python -m venv .venv
 pip install -r requirements.txt
+```
+
+
+-----
+
+
+## 10. Make your first Git commit
+
+Check the repository:
+
+```powershell
+git status
+```
+
