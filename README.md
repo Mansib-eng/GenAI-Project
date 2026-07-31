@@ -18,6 +18,47 @@ This repository documents my structured journey in Generative AI.
 - `data/` - Local datasets not tracked by Git
 - `requirements.txt` - Python dependencies
 
+```
+GenAI-Project/
+├── .env
+├── .gitignore
+├── README.md
+├── requirements.txt
+│
+├── week_01_foundations/
+│   ├── GenAi.md
+│   ├── GenAi.pdf
+│   └── notebooks/
+│       └── 01_environment_test.ipynb
+│
+├── project_01_classical_baseline/
+│   ├── data/
+│   │   ├── sample_raw_texts.txt
+│   │   └── sample_cleaned_texts.txt
+│   ├── notebooks/
+│   │   └── 01_text_cleaning_test.ipynb
+│   └── src/
+│       └── text_cleaning.py
+│
+├── project_02_transformer_lab/
+│   └── .gitkeep
+│
+├── project_03_clickbait_analyst/
+│   └── .gitkeep
+│
+├── project_04_rag_assistant/
+│   └── .gitkeep
+│
+├── project_05_lora_study/
+│   └── .gitkeep
+│
+├── project_06_agent_workflow/
+│   └── .gitkeep
+│
+└── final_capstone/
+    └── .gitkeep
+```
+
 ## Setup
 
 ```bash
@@ -46,14 +87,14 @@ The text-cleaning module performs:
 Bengali text, English text, code-mixed content, and emojis are preserved.
 
 ```
-GenAI-Project/
-└── project_01_classical_baseline/
-    ├── data/
-    │   └── sample_raw_texts.txt
-    ├── notebooks/
-    │   └── 01_text_cleaning_test.ipynb
-    └── src/
-        └── text_cleaning.py
+├── project_01_classical_baseline/
+│   ├── data/
+│   │   ├── sample_raw_texts.txt
+│   │   └── sample_cleaned_texts.txt
+│   ├── notebooks/
+│   │   └── 01_text_cleaning_test.ipynb
+│   └── src/
+│       └── text_cleaning.py
 
 ```
 
