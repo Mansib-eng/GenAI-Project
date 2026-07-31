@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 -----
 
-## Project 1
+## Project 1: Reproducible Classical Baseline
 
 ### Task 1: Reusable text-cleaning functions
 
@@ -45,6 +45,7 @@ The text-cleaning module performs:
 
 Bengali text, English text, code-mixed content, and emojis are preserved.
 
+```
 GenAI-Project/
 └── project_01_classical_baseline/
     ├── data/
@@ -53,6 +54,8 @@ GenAI-Project/
     │   └── 01_text_cleaning_test.ipynb
     └── src/
         └── text_cleaning.py
+
+```
 
 -----
 
