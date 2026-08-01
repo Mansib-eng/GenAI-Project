@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 ### Task 1: Reusable text-cleaning functions
 
-The text-cleaning module performs:
+The **text-cleaning module** performs:
 
 - Unicode NFC normalization
 - Missing-value handling
