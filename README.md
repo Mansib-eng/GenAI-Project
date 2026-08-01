@@ -36,7 +36,8 @@ GenAI-Project/
 │   │   ├── sample_raw_texts.txt
 │   │   └── sample_cleaned_texts.txt
 │   ├── notebooks/
-│   │   └── 01_text_cleaning_test.ipynb
+│   │   ├── 01_text_cleaning_test.ipynb
+    |   └── 02_numpy_vectors.ipynb
 │   └── src/
 │       └── text_cleaning.py
 │
@@ -97,6 +98,32 @@ Bengali text, English text, code-mixed content, and emojis are preserved.
 │       └── text_cleaning.py
 
 ```
+
+-----
+
+### Task 2: Calculate similarities manually and with NumPy
+
+```
+GenAI-Project/
+└── project_01_classical_baseline/
+    └── notebooks/
+        ├── 01_text_cleaning_test.ipynb
+        └── 02_numpy_vectors.ipynb
+```
+
+It covers:
+
+- NumPy arrays, dimensions, and shapes
+- Manual dot-product calculation
+- NumPy dot product
+- Manual vector magnitude
+- Manual cosine similarity
+- NumPy cosine similarity
+- Reusable similarity functions
+- Text represented as bag-of-words vectors
+- Pairwise similarity matrix
+- Zero-vector error handling
+- Practice exercise and automatic assertions
 
 -----
 
