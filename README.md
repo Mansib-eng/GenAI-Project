@@ -111,7 +111,7 @@ GenAI-Project/
         └── 02_numpy_vectors.ipynb
 ```
 
-02_numpy_vectors.ipynb covers:
+**02_numpy_vectors.ipynb** covers:
 
 - NumPy arrays, dimensions, and shapes
 - Manual dot-product calculation
