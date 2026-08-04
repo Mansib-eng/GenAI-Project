@@ -127,6 +127,32 @@ GenAI-Project/
 
 -----
 
+### Task 3: Produce a compact data-quality report
+
+```
+GenAI-Project/
+└── project_01_classical_baseline/
+    └── notebooks/
+        ├── 01_text_cleaning_test.ipynb
+        ├── 02_numpy_vectors.ipynb
+        └── 03_pandas_data_quality.ipynb
+```
+
+**03_pandas_data_quality.ipynb** covers:
+
+- Loading CSV data using pandas
+- Inspecting shape, columns, data types, and missing values
+- Filtering valid records
+- Grouping by label and platform
+- Detecting missing or empty text
+- Detecting duplicate text
+- Finding invalid labels and unexpected platforms
+- Producing a compact data-quality report
+- Automated verification with assertions
+- Independent practice exercises
+
+-----
+
 
 ## 10. Make your first Git commit
 
