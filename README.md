@@ -37,7 +37,8 @@ GenAI-Project/
 │   │   └── sample_cleaned_texts.txt
 │   ├── notebooks/
 │   │   ├── 01_text_cleaning_test.ipynb
-    |   └── 02_numpy_vectors.ipynb
+|   |   ├── 02_numpy_vectors.ipynb
+|   |   └── 03_pandas_data_quality.ipynb
 │   └── src/
 │       └── text_cleaning.py
 │
