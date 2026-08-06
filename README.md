@@ -35,10 +35,11 @@ GenAI-Project/
 │   ├── data/
 │   │   ├── sample_raw_texts.txt
 │   │   └── sample_cleaned_texts.txt
-│   ├── notebooks/
-│   │   ├── 01_text_cleaning_test.ipynb
+│   └── notebooks/
+|   |   ├── 01_text_cleaning_test.ipynb
 |   |   ├── 02_numpy_vectors.ipynb
-|   |   └── 03_pandas_data_quality.ipynb
+|   |   ├── 03_pandas_data_quality.ipynb
+|   |   └── 04_ml_workflow.ipynb
 │   └── src/
 │       └── text_cleaning.py
 │
@@ -153,6 +154,39 @@ GenAI-Project/
 - Independent practice exercises
 
 -----
+
+### Task 4: Build a clean train/validation/test pipeline
+
+```
+project_01_classical_baseline/
+└── notebooks/
+    ├── 01_text_cleaning_test.ipynb
+    ├── 02_numpy_vectors.ipynb
+    ├── 03_pandas_data_quality.ipynb
+    └── 04_ml_workflow.ipynb
+
+```
+
+**04_ml_workflow.ipynb** teaches:
+
+- Train / validation / test split
+- Why we need three datasets
+- Stratified splitting
+- What data leakage is
+- How TF-IDF can cause leakage
+- `DummyClassifier` baseline
+- TF-IDF + Logistic Regression
+- `Pipeline`
+- Training vs validation performance
+- Detecting possible overfitting
+- Final test evaluation
+- Why the test set should remain untouched
+- Automatic assertions
+- Independent exercises
+
+The notebook produces the required evidence: a clean, leakage-safe train/validation/test ML pipeline.
+
+------
 
 
 ## 10. Make your first Git commit
