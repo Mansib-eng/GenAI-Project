@@ -1,0 +1,21 @@
+{
+  "model": "TF-IDF + Logistic Regression",
+  "selected_ngram_range": [
+    1,
+    1
+  ],
+  "selection_metric": "validation_macro_f1",
+  "validation_macro_f1": 0.8285714285714285,
+  "split_sizes": {
+    "train": 28,
+    "validation": 6,
+    "test": 6
+  },
+  "test_metrics": {
+    "accuracy": 0.8333333333333334,
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1": 0.8571428571428571,
+    "macro_f1": 0.8285714285714285
+  }
+}

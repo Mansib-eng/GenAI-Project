@@ -35,11 +35,14 @@ GenAI-Project/
 │   ├── data/
 │   │   ├── sample_raw_texts.txt
 │   │   └── sample_cleaned_texts.txt
-│   └── notebooks/
-|   |   ├── 01_text_cleaning_test.ipynb
-|   |   ├── 02_numpy_vectors.ipynb
-|   |   ├── 03_pandas_data_quality.ipynb
-|   |   └── 04_ml_workflow.ipynb
+│   ├── notebooks/
+│   |   ├── 01_text_cleaning_test.ipynb
+│   |   ├── 02_numpy_vectors.ipynb
+│   |   ├── 03_pandas_data_quality.ipynb
+│   |   ├── 04_ml_workflow.ipynb
+│   |   └── 05_classical_baseline.ipynb
+|   ├── results/
+│   |   └── day_05_baseline_metrics.json
 │   └── src/
 │       └── text_cleaning.py
 │
@@ -187,6 +190,61 @@ project_01_classical_baseline/
 The notebook produces the required evidence: a clean, leakage-safe train/validation/test ML pipeline.
 
 ------
+
+
+### Task 5: Train a clickbait baseline and save metrics
+
+```
+project_01_classical_baseline/
+├── notebooks/
+│   ├── 01_text_cleaning_test.ipynb
+│   ├── 02_numpy_vectors.ipynb
+│   ├── 03_pandas_data_quality.ipynb
+│   ├── 04_ml_workflow.ipynb
+│   └── 05_classical_baseline.ipynb
+├── results/
+│   └── day_05_baseline_metrics.json
+└── src/
+    └── text_cleaning.py
+
+```
+
+**05_classical_baseline.ipynb** is essentially the first complete classical ML text-classification experiment.
+
+The final baseline achieved:
+
+```
+Accuracy:   0.833
+Precision:  0.750
+Recall:     1.000
+F1:         0.857
+Macro-F1:   0.829
+
+```
+
+
+
+| Part | What learn |
+|---|---|
+| Dataset | Creates factual (`0`) and clickbait (`1`) text examples |
+| Stratified split | Creates 70% train, 15% validation, 15% test while maintaining class balance |
+| TF-IDF | Converts text into numerical features |
+| Logistic Regression | Learns to classify factual vs clickbait |
+| `(1,1)` | Tests unigrams |
+| `(1,2)` | Tests unigrams + bigrams |
+| `(1,3)` | Tests unigrams + bigrams + trigrams |
+| Validation | Compares the three TF-IDF configurations |
+| Model selection | Selects the best configuration using validation Macro-F1 |
+| Test evaluation | Tests the selected model on unseen data |
+| Accuracy | Overall percentage of correct predictions |
+| Precision | When model says "clickbait", how often it is correct |
+| Recall | How many actual clickbait examples it finds |
+| F1 | Balance between precision and recall |
+| Macro-F1 | Gives equal importance to each class |
+| JSON saving | Saves final experiment results to `day_05_baseline_metrics.json` |
+
+
+-----
 
 
 ## 10. Make your first Git commit
