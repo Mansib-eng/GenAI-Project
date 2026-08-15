@@ -40,9 +40,11 @@ GenAI-Project/
 │   |   ├── 02_numpy_vectors.ipynb
 │   |   ├── 03_pandas_data_quality.ipynb
 │   |   ├── 04_ml_workflow.ipynb
-│   |   └── 05_classical_baseline.ipynb
+│   |   ├── 05_classical_baseline.ipynb
+│   |   └── 06_evaluation_error_analysis.ipynb
 |   ├── results/
-│   |   └── day_05_baseline_metrics.json
+│   |   ├── day_05_baseline_metrics.json
+    |   └── day_06_error_analysis.md
 │   └── src/
 │       └── text_cleaning.py
 │
@@ -243,6 +245,53 @@ Macro-F1:   0.829
 | Macro-F1 | Gives equal importance to each class |
 | JSON saving | Saves final experiment results to `day_05_baseline_metrics.json` |
 
+
+-----
+
+
+### Task 6: Evaluation error-analysis 
+
+```
+project_01_classical_baseline/
+├── notebooks/
+│   ├── 05_classical_baseline.ipynb
+│   └── 06_evaluation_error_analysis.ipynb
+└── results/
+    ├── day_05_baseline_metrics.json
+    └── day_06_error_analysis.md
+
+```
+
+Key Findings:
+
+```
+Accuracy:       0.833
+Macro-F1:       0.829
+
+True negatives:  2
+False positives: 1
+False negatives: 0
+True positives:  3
+
+```
+
+The only error was:
+
+```
+Researchers publish results of health study
+```
+
+**06_evaluation_error_analysis.ipynb** covers:
+
+- Accuracy and Macro-F1
+- Confusion matrix
+- True positives, true negatives, false positives, and false negatives
+- Precision, recall, F1, and support for each class
+- Test-prediction inspection
+- Misclassified-example analysis
+- TF-IDF vocabulary limitations
+- Prediction probability interpretation
+- One-page error-analysis generation
 
 -----
 
