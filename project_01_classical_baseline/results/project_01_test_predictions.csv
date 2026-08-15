@@ -1,0 +1,7 @@
+text,actual,predicted,clickbait_probability,correct
+Central bank keeps interest rate unchanged,0,0,0.46972365159263585,True
+This shocking secret has everyone talking,1,1,0.6306327069932558,True
+The hidden reason behind this unbelievable story,1,1,0.6301155296809606,True
+Researchers publish results of health study,0,1,0.5084757192188144,False
+This secret detail changes everything,1,1,0.5057724247448212,True
+Hospital opens new emergency care unit,0,0,0.39444413997296635,True

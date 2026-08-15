@@ -1,0 +1,70 @@
+{
+  "project": "Project 01 \u2014 Classical Clickbait Baseline",
+  "random_state": 42,
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.0.2",
+    "pandas": "2.2.2",
+    "scikit_learn": "1.6.1",
+    "matplotlib": "3.10.0"
+  },
+  "dataset_rows": 40,
+  "split_sizes": {
+    "train": 28,
+    "validation": 6,
+    "test": 6
+  },
+  "selection_metric": "validation_macro_f1",
+  "selected_candidate": "word_1_1",
+  "selected_settings": {
+    "analyzer": "word",
+    "ngram_range": [
+      1,
+      1
+    ]
+  },
+  "validation_macro_f1": 0.8285714285714285,
+  "test_metrics": {
+    "accuracy": 0.8333333333333334,
+    "precision_clickbait": 0.75,
+    "recall_clickbait": 1.0,
+    "f1_clickbait": 0.8571428571428571,
+    "macro_f1": 0.8285714285714285
+  },
+  "confusion_matrix": [
+    [
+      2,
+      1
+    ],
+    [
+      0,
+      3
+    ]
+  ],
+  "candidate_comparison": [
+    {
+      "candidate": "word_1_1",
+      "validation_accuracy": 0.8333333333333334,
+      "validation_macro_f1": 0.8285714285714285,
+      "feature_count": 136
+    },
+    {
+      "candidate": "word_1_2",
+      "validation_accuracy": 0.8333333333333334,
+      "validation_macro_f1": 0.8285714285714285,
+      "feature_count": 278
+    },
+    {
+      "candidate": "word_1_3",
+      "validation_accuracy": 0.8333333333333334,
+      "validation_macro_f1": 0.8285714285714285,
+      "feature_count": 395
+    },
+    {
+      "candidate": "char_wb_3_5",
+      "validation_accuracy": 0.8333333333333334,
+      "validation_macro_f1": 0.8285714285714285,
+      "feature_count": 1661
+    }
+  ]
+}

@@ -26,7 +26,6 @@ GenAI-Project/
 ├── requirements.txt
 │
 ├── week_01_foundations/
-│   ├── GenAi.md
 │   ├── GenAi.pdf
 │   └── notebooks/
 │       └── 01_environment_test.ipynb
@@ -34,20 +33,30 @@ GenAI-Project/
 ├── project_01_classical_baseline/
 │   ├── data/
 │   │   ├── sample_raw_texts.txt
-│   │   └── sample_cleaned_texts.txt
+│   │   ├── sample_cleaned_texts.txt
+|   |   └── practice_clickbait.csv
+|   ├── models/
+│   │   └── project_01_classical_baseline.joblib
 │   ├── notebooks/
 │   |   ├── 01_text_cleaning_test.ipynb
 │   |   ├── 02_numpy_vectors.ipynb
 │   |   ├── 03_pandas_data_quality.ipynb
 │   |   ├── 04_ml_workflow.ipynb
 │   |   ├── 05_classical_baseline.ipynb
-│   |   └── 06_evaluation_error_analysis.ipynb
+│   |   ├── 06_evaluation_error_analysis.ipynb
+|        └── 07_project_01_checkpoint.ipynb
 |   ├── results/
 │   |   ├── day_05_baseline_metrics.json
-    |   └── day_06_error_analysis.md
-│   └── src/
+|   |   ├── day_06_error_analysis.md
+|   |   ├── project_01_checkpoint_metrics.json
+|   |   ├── project_01_test_predictions.csv
+|   |   └── project_01_confusion_matrix.png
+│   ├── src/
 │       └── text_cleaning.py
-│
+│   ├── README.md
+|   ├── requirements.txt
+|   └── week_02_python_data_ml_refresher.pdf
+
 ├── project_02_transformer_lab/
 │   └── .gitkeep
 │
@@ -294,6 +303,49 @@ Researchers publish results of health study
 - One-page error-analysis generation
 
 -----
+
+### Day 7: Project 1 Checkpoint
+
+**Notebook:** `07_project_01_checkpoint.ipynb`
+
+The final checkpoint combines the complete workflow:
+
+- Loading and checking the dataset
+- Creating stratified data splits
+- Comparing TF-IDF configurations
+- Selecting the best model
+- Evaluating the model on unseen test data
+- Saving the trained model
+- Exporting predictions, metrics, and the confusion matrix
+
+#### Final Checkpoint Results
+
+```text
+Selected model:          Word TF-IDF (1,1) + Logistic Regression
+Validation Macro-F1:     0.829
+Test accuracy:           0.833
+Test Macro-F1:           0.829
+```
+
+#### Final Project Structure
+
+```text
+project_01_classical_baseline/
+├── data/
+│   └── practice_clickbait.csv
+├── notebooks/
+│   ├── 05_classical_baseline.ipynb
+│   ├── 06_evaluation_error_analysis.ipynb
+│   └── 07_project_01_checkpoint.ipynb
+├── models/
+│   └── project_01_classical_baseline.joblib
+└── results/
+    ├── project_01_checkpoint_metrics.json
+    ├── project_01_test_predictions.csv
+    └── project_01_confusion_matrix.png
+```
+
+---
 
 
 ## 10. Make your first Git commit
