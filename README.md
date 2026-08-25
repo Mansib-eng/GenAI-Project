@@ -360,10 +360,10 @@ project_01_classical_baseline/
 project_02_transformer_lab/
 ├── requirements.txt
 └── notebooks/
-    └── **01_tensor_operations.ipynb**
+    └── 01_tensor_operations.ipynb
 ```
 
-The notebook contains exactly 12 tensor operations:
+**01_tensor_operations.ipynb** notebook contains exactly 12 tensor operations:
 
 1.  Scalar, vector, and matrix creation
 2.  Zeros, ones, and filled tensors
