@@ -58,7 +58,9 @@ GenAI-Project/
 |   └── week_02_python_data_ml_refresher.pdf
 
 ├── project_02_transformer_lab/
-│   └── .gitkeep
+|   ├── requirements.txt
+|   └── notebooks/
+|       └── 01_tensor_operations.ipynb
 │
 ├── project_03_clickbait_analyst/
 │   └── .gitkeep
@@ -344,6 +346,51 @@ project_01_classical_baseline/
     ├── project_01_test_predictions.csv
     └── project_01_confusion_matrix.png
 ```
+
+---
+
+## Project 2: Transformer inspection and comparison lab
+
+### Task 1: Complete 12 tensor operations
+
+**Task:** Tensors: Learn tensor creation, shapes, dtypes, devices, and broadcasting.
+
+
+```
+project_02_transformer_lab/
+├── requirements.txt
+└── notebooks/
+    └── **01_tensor_operations.ipynb**
+```
+
+The notebook contains exactly 12 tensor operations:
+
+1.  Scalar, vector, and matrix creation
+2.  Zeros, ones, and filled tensors
+3.  `arange` and `linspace`
+4.  Shape, dimensions, dtype, device, and elements
+5.  Reshaping and flattening
+6.  Dtype conversion
+7.  CPU/GPU device selection
+8.  Indexing and slicing
+9.  Element-wise arithmetic
+10.  Broadcasting
+11.  Matrix multiplication
+12.  Reduction operations
+
+The notebook structure and all Python cells were validated. PyTorch is not installed in this workspace, so I could not execute the operations here. On your computer, run:
+
+```
+.venv\Scripts\Activate.ps1
+pip install -r project_02_transformer_lab/requirements.txt
+```
+
+Then select the `.venv` kernel and click **Run All**. The final output should be:
+
+```
+All 12 PyTorch tensor operations passed successfully!
+```
+
 
 ---
 
