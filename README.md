@@ -60,7 +60,8 @@ GenAI-Project/
 ├── project_02_transformer_lab/
 |   ├── requirements.txt
 |   └── notebooks/
-|       └── 01_tensor_operations.ipynb
+|       ├── 01_tensor_operations.ipynb
+|       └── 02_autograd.ipynb
 │
 ├── project_03_clickbait_analyst/
 │   └── .gitkeep
