@@ -394,6 +394,76 @@ All 12 PyTorch tensor operations passed successfully!
 
 ---
 
+### Task 2: Understand PyTorch Autograd
+
+**Task:** Autograd: Learn automatic differentiation, computational graphs, gradient calculation, gradient accumulation, and how gradients are used to train neural networks.
+
+```text
+project_02_transformer_lab/
+├── requirements.txt
+└── notebooks/
+    ├── 01_tensor_operations.ipynb
+    └── 02_autograd.ipynb
+
+```
+
+**02_autograd.ipynb** covers the following concepts and operations:
+
+- Creating tensors with `requires_grad=True`
+- Calculating derivatives using `.backward()`
+- Inspecting gradients using `.grad`
+- Understanding computational graphs and `grad_fn`
+- Differentiating polynomial functions
+- Calculating gradients with multiple variables
+- Understanding gradient accumulation
+- Resetting gradients using `.grad.zero_()`
+- Using floating-point tensors for gradient computation
+- Disabling gradient tracking using `torch.no_grad()`
+- Detaching tensors from the graph using `.detach()`
+- Connecting Autograd to loss calculation
+- Performing a manual gradient-descent weight update
+- Building a small training loop
+- Completing single-variable and multi-variable gradient exercises
+
+The notebook demonstrates the basic PyTorch training workflow:
+
+```text
+Forward calculation
+        ↓
+Calculate loss
+        ↓
+loss.backward()
+        ↓
+Calculate gradients
+        ↓
+Update parameters
+        ↓
+Reset gradients
+```
+
+The main exercise differentiates:
+
+$$
+y = 2x^3 + 4x^2 + 3x + 1
+$$
+
+at `x = 3`.
+
+The expected gradient is:
+
+```text
+dy/dx = tensor(81.)
+```
+
+The additional multi-variable exercise produces:
+
+```text
+df/dx = tensor(12.)
+df/dy = tensor(22.)
+```
+
+---
+
 
 ## 10. Make your first Git commit
 
