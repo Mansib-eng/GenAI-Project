@@ -61,7 +61,8 @@ GenAI-Project/
 |   ├── requirements.txt
 |   └── notebooks/
 |       ├── 01_tensor_operations.ipynb
-|       └── 02_autograd.ipynb
+|       ├── 02_autograd.ipynb
+|       └── 03_pytorch_modules_two_layer_classifier.ipynb
 │
 ├── project_03_clickbait_analyst/
 │   └── .gitkeep
@@ -462,6 +463,106 @@ The additional multi-variable exercise produces:
 df/dx = tensor(12.)
 df/dy = tensor(22.)
 ```
+
+---
+
+### Task 3: Build a Two-Layer Classifier with PyTorch Modules
+
+**Task:** Modules: Learn `nn.Module`, layers, activation functions, forward passes, trainable parameters, and how neural-network components connect with Autograd.
+
+```text
+project_02_transformer_lab/
+├── requirements.txt
+└── notebooks/
+    ├── 01_tensor_operations.ipynb
+    ├── 02_autograd.ipynb
+    └── 03_pytorch_modules_two_layer_classifier.ipynb
+```
+
+**03_pytorch_modules_two_layer_classifier.ipynb** covers the following concepts and operations:
+
+- Creating custom models using `nn.Module`
+- Defining model layers inside `__init__()`
+- Defining data flow using the `forward()` method
+- Creating fully connected layers using `nn.Linear`
+- Understanding input and output dimensions
+- Using activation functions such as `nn.ReLU`
+- Passing tensors through neural-network layers
+- Understanding logits in classification models
+- Converting logits to probabilities using `torch.softmax()`
+- Predicting classes using `torch.argmax()`
+- Processing multiple samples using batches
+- Inspecting model weights and biases with `named_parameters()`
+- Understanding `requires_grad=True` for trainable parameters
+- Counting total and trainable model parameters
+- Building models using `nn.Sequential`
+- Connecting `nn.Module` with PyTorch Autograd
+- Calculating classification loss using `nn.CrossEntropyLoss()`
+- Computing gradients using `loss.backward()`
+- Building and validating a two-layer classifier
+
+The notebook demonstrates the basic neural-network architecture:
+
+```text
+Input tensor
+     ↓
+Linear layer
+     ↓
+ReLU activation
+     ↓
+Linear layer
+     ↓
+Output logits
+```
+
+The main classifier uses the following architecture:
+
+```text
+10 input features
+        ↓
+Linear(10, 16)
+        ↓
+ReLU
+        ↓
+Linear(16, 4)
+        ↓
+4 output logits
+```
+
+The model is tested using a batch containing:
+
+```text
+6 samples × 10 features
+```
+
+and produces:
+
+```text
+6 samples × 4 output logits
+```
+
+The expected validation output is:
+
+```text
+Two-layer classifier passed successfully!
+```
+
+The notebook also connects Day 2 Autograd concepts with neural-network modules by demonstrating:
+
+```text
+Input
+  ↓
+Model
+  ↓
+Logits
+  ↓
+Loss
+  ↓
+loss.backward()
+  ↓
+Gradients for model weights and biases
+```
+
 
 ---
 
