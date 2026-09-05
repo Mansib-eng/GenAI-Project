@@ -62,7 +62,8 @@ GenAI-Project/
 |   └── notebooks/
 |       ├── 01_tensor_operations.ipynb
 |       ├── 02_autograd.ipynb
-|       └── 03_pytorch_modules_two_layer_classifier.ipynb
+|       ├── 03_pytorch_modules_two_layer_classifier.ipynb
+|       └── 04_training_loop.ipynb
 │
 ├── project_03_clickbait_analyst/
 │   └── .gitkeep
@@ -562,6 +563,218 @@ loss.backward()
   ↓
 Gradients for model weights and biases
 ```
+
+
+---
+
+### Task 4: Implement a PyTorch Training Loop
+
+**Task:** Implement the loss calculation, forward pass, backward pass, optimizer step, and `zero_grad()`. Train a classifier and plot its loss.
+
+```text
+project_02_transformer_lab/
+├── requirements.txt
+└── notebooks/
+    ├── 01_tensor_operations.ipynb
+    ├── 02_autograd.ipynb
+    ├── 03_pytorch_modules_two_layer_classifier.ipynb
+    └── 04_training_loop.ipynb
+```
+
+**04_training_loop.ipynb** covers the following concepts and operations:
+
+- Creating a synthetic binary-classification dataset
+- Separating data into training and test sets
+- Building a two-layer classifier using `nn.Module`
+- Defining fully connected layers using `nn.Linear`
+- Using `nn.ReLU` as the hidden-layer activation function
+- Producing output logits through a forward pass
+- Defining classification loss using `nn.CrossEntropyLoss()`
+- Creating an optimizer using `torch.optim.Adam`
+- Understanding the purpose of the learning rate
+- Implementing a complete PyTorch training loop
+- Clearing previously stored gradients using `optimizer.zero_grad()`
+- Making predictions using `model(X_train)`
+- Calculating loss by comparing logits with the correct labels
+- Computing gradients using `loss.backward()`
+- Updating model parameters using `optimizer.step()`
+- Recording training loss after every epoch
+- Monitoring loss during training
+- Plotting training loss across epochs
+- Switching the model to evaluation mode using `model.eval()`
+- Disabling gradient calculations using `torch.no_grad()`
+- Converting logits into predicted classes using `torch.argmax()`
+- Calculating test accuracy
+- Validating that the classifier successfully learned the classification pattern
+
+
+The notebook demonstrates the following training process:
+
+```text
+Training data
+      ↓
+Forward pass
+      ↓
+Output logits
+      ↓
+Calculate loss
+      ↓
+Backward pass
+      ↓
+Calculate gradients
+      ↓
+Optimizer step
+      ↓
+Updated model parameters
+```
+
+
+The classifier uses the following architecture:
+
+```text
+2 input features
+       ↓
+Linear(2, 8)
+       ↓
+ReLU
+       ↓
+Linear(8, 2)
+       ↓
+2 output logits
+```
+
+The first linear layer transforms the two input features into eight hidden features. The `ReLU` activation introduces nonlinearity, and the final linear layer produces one logit for each class.
+
+
+The operations inside each training epoch occur in the following order:
+
+```python
+optimizer.zero_grad()
+
+logits = model(X_train)
+
+loss = loss_function(logits, y_train)
+
+loss.backward()
+
+optimizer.step()
+```
+
+Each operation has a specific purpose:
+
+| Operation | Purpose |
+|---|---|
+| `optimizer.zero_grad()` | Clears gradients calculated during the previous epoch |
+| `model(X_train)` | Performs the forward pass and produces logits |
+| `loss_function(logits, y_train)` | Measures the difference between the predictions and correct labels |
+| `loss.backward()` | Calculates gradients using backpropagation |
+| `optimizer.step()` | Updates the model's weights and biases using the calculated gradients |
+
+
+The synthetic dataset contains:
+
+```text
+200 total samples
+```
+
+It is divided into:
+
+```text
+160 training samples
+40 test samples
+```
+
+Each sample contains:
+
+```text
+2 input features
+```
+
+The classifier predicts one of two classes:
+
+```text
+Class 0
+Class 1
+```
+
+The model is trained for:
+
+```text
+200 epochs
+```
+
+One epoch represents one complete pass through the training dataset.
+
+The notebook records the loss after every epoch:
+
+```python
+loss_history.append(loss.item())
+```
+
+`loss.item()` converts the single-value PyTorch loss tensor into a regular Python number before storing it in `loss_history`.
+
+
+The stored loss values are used to create a training-loss curve:
+
+```text
+Training epoch
+      ↓
+Recorded loss
+      ↓
+Training-loss curve
+```
+
+The graph uses:
+
+- **X-axis:** Training epoch
+- **Y-axis:** Cross-entropy loss
+
+A generally decreasing loss curve indicates that the model is learning from the training data.
+
+
+After training, the model is switched to evaluation mode:
+
+```python
+model.eval()
+```
+
+Gradient calculation is disabled during evaluation:
+
+```python
+with torch.no_grad():
+```
+
+The evaluation process is:
+
+```text
+Test inputs
+     ↓
+Trained classifier
+     ↓
+Output logits
+     ↓
+torch.argmax()
+     ↓
+Predicted classes
+     ↓
+Test accuracy
+```
+
+The predicted class is selected using:
+
+```python
+test_predictions = torch.argmax(test_logits, dim=1)
+```
+
+Test accuracy is calculated by comparing the predicted classes with the correct test labels.
+
+
+The final validation checks confirm that:
+
+- The training loop completed all 200 epochs
+- Every recorded loss value is finite
+- The final loss is lower than the initial loss
+- Test accuracy is at least 80%
 
 
 ---
